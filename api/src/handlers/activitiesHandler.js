@@ -1,17 +1,21 @@
+const { createActivity, allActivities } = require('../controllers/activitiesControllers');
+
 const getActivities = (req, res) => {
     try {
-        res.send("estoy en get activity")
+        const activities = allActivities()
+        return res.status(200).json(activities)
     } catch (error) {
-        res.json({error: error.message})
+        return res.status(400).json({error: error.message})
     }
 };
 
-const postActivities = (req, res) => {
+const postActivities = async (req, res) => {
     try {
         const { name, difficulty, duration, season } = req.body;
-        res.send(`estoy en post activity con los datos: ${name}, ${difficulty}, ${duration}, ${season} `)
+        const newActivity = await createActivity(name, difficulty, duration, season)
+        return res.status(201).json(newActivity)
     } catch (error) {
-        res.json({error: error.message})
+        return res.status(400).json({error: error.message})
     }
 };
 

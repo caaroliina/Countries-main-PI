@@ -7,7 +7,7 @@ const allActivities = async () => {
 
 const createActivity = async ( name, difficulty, duration, season ) => {
     const newActivity = await Activity.create( {name, difficulty, duration, season} )
-    return newActivity
+    return newActivity;
 }
 
 module.exports = {

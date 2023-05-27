@@ -16,9 +16,9 @@ module.exports = (sequelize) => {
     flagImg: {
       type: DataTypes.STRING,
     },
-    continent: {
-      type: DataTypes.STRING,
-    },
+    // continent: {
+    //   type: DataTypes.STRING,
+    // },
     capital: {
       type: DataTypes.STRING,
     },

@@ -1,22 +1,22 @@
-const { getCountriesById, foundCountry, searchCountries } = require('../controllers/countriesControllers.js')
+const { getCountriesById, searchCountry, searchCountries } = require('../controllers/countriesControllers.js')
 
 const getCountryById = async (req,res) => {
     const {idPais} = req.params;
-    let source = idPais.length == 3 ? 'api' : 'bdd';
+    const id = idPais.toUpperCase();
 
     try {
-        const foundCountry = await getCountriesById(idPais, source)
-        return res.status(200).json(foundCountry);
+        const searchCountryId = await getCountriesById(id)
+        return res.status(200).json(searchCountryId);
     } catch (error) {
         return res.status(400).json({error: error.message})
     }
 }
 
-const getCountries = (req, res) => {
+const getCountries = async (req, res) => {
     const { name } = req.query;
 
     try {
-        const result = name !== undefined ? foundCountry(name) : searchCountries(); 
+        const result = name !== undefined ? await searchCountry(name) : await searchCountries(); 
         return res.status(200).json(result);
 
     } catch (error) {

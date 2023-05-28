@@ -1,7 +1,11 @@
-const Home = () => {
-    return <div>
+// import style from './Home.module.css'
 
-    </div>
+function Home () {
+    return (
+        <div>
+            <h1> Componente Home </h1>
+        </div>
+    )
 }
-
 export default Home;
+

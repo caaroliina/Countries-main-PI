@@ -2,7 +2,7 @@
 
 const Detail = () => {
     return <div>
-
+        <h1> pag del detail </h1>
     </div>
 }
 

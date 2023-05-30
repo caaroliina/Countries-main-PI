@@ -5,22 +5,27 @@ import Form from './components/Form/Form';
 import Home from './components/Home/Home';
 import Landing from './components/LandingPage/LandingPage';
 import Nav from './components/Nav/Nav';
+// import axios from 'axios'
 
 
 function App() {
     const { pathname } = useLocation();
 
+    const onSearch = async (name) => {
+      // const { data } = await axios.get()
+    }
+
     return (
         <div className="App">
-          <div>
-                {pathname !== "/" && <Nav />}
+            <div>
+                {pathname !== "/" && <Nav onSearch={ onSearch } />}
             </div>
             <div>
                 <Routes>
                     <Route path='/' element={<Landing />} />
                     <Route path='/home' element={<Home />} />
                     <Route path='/detail/:id' element={<Detail />} />
-                    <Route path='/activities' element={<Form />} />
+                    <Route path='/form' element={<Form />} />
                 </Routes>
             </div>
         </div>

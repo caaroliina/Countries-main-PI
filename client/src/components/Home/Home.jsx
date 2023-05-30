@@ -1,6 +1,6 @@
 // import style from './Home.module.css'
 
-function Home () {
+const Home  = () => {
     return (
         <div>
             <h1> Componente Home </h1>

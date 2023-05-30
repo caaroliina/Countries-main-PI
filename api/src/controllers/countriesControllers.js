@@ -4,7 +4,6 @@ const axios = require('axios')
 const getCountriesById = async (idPais) => {
     
     const id = idPais.toUpperCase();
-
     return await Country.findOne({where: {id: id}, include: Activity})
 }
 

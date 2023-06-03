@@ -1,24 +1,25 @@
 import './App.css';
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Detail from './components/Detail/Detail';
 import Form from './components/Form/Form';
 import Home from './components/Home/Home';
 import Landing from './components/LandingPage/LandingPage';
 import Nav from './components/Nav/Nav';
 // import axios from 'axios'
+import { useLocation } from 'react-router-dom';
 
 
 function App() {
     const { pathname } = useLocation();
 
-    const onSearch = async (name) => {
-      // const { data } = await axios.get()
-    }
+    // const onSearch = async (name) => {
+    //   // const { data } = await axios.get()
+    // }
 
     return (
         <div className="App">
             <div>
-                {pathname !== "/" && <Nav onSearch={ onSearch } />}
+                {pathname !== "/" && <Nav />}
             </div>
             <div>
                 <Routes>

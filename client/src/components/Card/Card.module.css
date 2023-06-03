@@ -1,0 +1,16 @@
+.container {
+    width: 50%;
+    height: 50%;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.image {
+    width: 90px;
+    height: 60px;
+}
